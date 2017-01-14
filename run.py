@@ -14,7 +14,7 @@ def hello_monkey():
 	"""Respond to incoming calls with a simple text message."""
 	currentDate = (time.strftime("%m-%d-%Y"))
 	DiningCourts = ["Earhart", "Ford", "Hillenbrand", "Wiley", "Windsor"]
-	output = "Dining Courts with Carnival Cookies today:\n"
+	output = "\nDining Courts with Carnival Cookies today:\n"
 	for DiningCourt in DiningCourts:
 		command = "curl -s https://api.hfs.purdue.edu/menus/v1/locations/" + DiningCourt + "/" + currentDate + " | grep -m 1 -c 'Carnival'"
 		if os.popen(command).read().rstrip() == "1":
