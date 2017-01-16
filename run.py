@@ -5,7 +5,7 @@ import time
 from twilio.rest import TwilioRestClient
 # put your own credentials here
 ACCOUNT_SID = 'ACb77e65b904971ea0cf4b774dd64e62f5'
-AUTH_TOKEN = 'b3b93b889b515a90ea0826f1f08b1a4b'
+AUTH_TOKEN = '3b4cdb19f6d7a33199b21ca878536705'
 
 app = Flask(__name__)
 
