@@ -14,17 +14,17 @@ def hello_monkey():
 	"""Respond to incoming calls with a simple text message."""
 	currentDate = (time.strftime("%m-%d-%Y"))
 	DiningCourts = ["Earhart", "Ford", "Hillenbrand", "Wiley", "Windsor"]
-	output = "\nDining Courts with Carnival Cookies today:\n"
+	output = "\nDining Courts with Red Velvet Cake today:\n"
 	for DiningCourt in DiningCourts:
-		command = "curl -s https://api.hfs.purdue.edu/menus/v1/locations/" + DiningCourt + "/" + currentDate + " | grep -m 1 -c 'Carnival'"
+		command = "curl -s https://api.hfs.purdue.edu/menus/v1/locations/" + DiningCourt + "/" + currentDate + " | grep -m 1 -c 'Velvet'"
 		if os.popen(command).read().rstrip() == "1":
 			output = output + DiningCourt + "\n"
 
-	if output == "Dining Courts with Carnival Cookies today:\n":
+	if output == "Dining Courts with Red Velvet Cake today:\n":
 			s = u'\U0001F622'
 			with open("yop", "wb") as f:
 				f.write(s.encode("utf-8"))
-			output = "No Dining Courts Have Carnival Cookies today " + s
+			output = "No Dining Courts Have Red Velvet Cake today " + s
 			output = output.encode('utf-8')
 	resp = twilio.twiml.Response()
 	resp.message(output)
